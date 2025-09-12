@@ -13,6 +13,7 @@ Identify elite players with “top-right” scatter plots (e.g., npxG/90 vs xA/9
 ```bash
 pip install -r requirements.txt
 # open notebooks/01_explore.ipynb and run
+```
 
 ## Results
 ![npxG vs xA](figures/demo_scatter.png)
