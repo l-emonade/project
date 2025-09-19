@@ -4,9 +4,9 @@ Identify elite players with “top-right” scatter plots (e.g., npxG/90 vs xA/9
 
 ## Structure
 - `data/` https://www.kaggle.com/datasets/siddhrajthakor/fbref-premier-league-202425-player-stats-dataset
+https://www.kaggle.com/datasets/mohulaprasath/daily-football-stats-202526-epl-laligaserie-a
 - `figures/` exported plots
 - `notebooks/` analysis notebooks
-- `sql/` SQL queries
 - `requirements.txt` Python deps
 
 ## Reproduce
@@ -25,10 +25,28 @@ Players in the top right are ones who get into high xG situations and are able t
 ![Goals/90 vs Assists/90](figures/goals90_vs_ast90.png) 
 Players in the top-right quadrant contribute both goals and assists at elite per-90 rates, highlighting balanced attackers.
 
+### Progressive Passers vs Progressive Carriers
+![Progressive Passers vs Progressive Carriers](figures/progression_3way_bubble.png)
+Players in the top right are ones who in the top 70 percentile for both progressive carries and passes per 90. The bigger their icon, the more progressive receives they get per 90. 
+
+### Volume vs Efficiency of Shots
+![Volume vs Efficiency of Shots](figures/shooting_style_comparison.png)
+Top most efficient teams (goals per shot) identified using SQL.
+  Top-right: high volume + efficient (dominant attacking teams).
+  Top-left: low volume but efficient (clinical but low output).
+  Bottom-right: high volume but wasteful (inefficient shooters).
+  Bottom-left: low volume + low efficiency (weak attack).
+
 
 
 
 ## Progress
+
+-**2025-9-18**
+  - Set up DuckDB and created `matches` table from Kaggle dataset.
+  - Built SQL query: team shooting efficiency (goals per shot).
+  - Created scatterplot of Total Shots vs Shot Conversion % with top teams labeled.
+  - Added regression line overlay to test correlation between volume and efficiency.
 
 - **2025-09-13**
   - Created per-90 metrics (Goals90, Ast90, xG90).
